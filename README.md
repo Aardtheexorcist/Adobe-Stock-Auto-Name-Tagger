@@ -1,0 +1,1 @@
+# Adobe-Stock-Auto-Name-Tagger
