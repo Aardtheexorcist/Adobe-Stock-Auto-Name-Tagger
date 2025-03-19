@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Adobe Stock Auto Uploader",
+  "version": "1.0",
+  "description": "Automates image upload and analysis for Adobe Stock",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.adobe.com/*",
+    "*://*.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://stock.adobe.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
